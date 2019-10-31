@@ -1,0 +1,145 @@
+@import "general.css";
+
+.card-pendente .card {
+  width: 100%;
+}
+
+.pendente-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 12px;
+  margin: auto;
+  margin-right: 7px;
+}
+
+.pendente-data span {
+  color: #6B6B6B;
+  font-size: 14px;
+}
+
+.pendente-conteudo {
+  display: flex;
+  margin-top: auto;
+  margin-left: 21px;
+  margin-bottom: auto;
+  margin-right: 21px;
+}
+
+.card-pendente {
+  height: 37px;
+  display: flex;
+  margin-top: 8px;
+}
+
+.pendente-foto {
+  width: 26px;
+  height: 26px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.pendente-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 15px;
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.pendente-nome {
+  font-size: 14px;
+}
+
+.pendente-horario {
+  font-size: 12px;
+}
+
+.pendente-botoes-container {
+  display: flex;
+  justify-content: space-between;
+  width: 65px;
+  align-items: center;
+}
+
+.pendente-descricao {
+  margin: auto;
+}
+
+.pendente-botoes-container img{
+  width: 26px;
+  height: 26px;
+}
+
+.card-pendente:last-child {
+  margin-bottom: 8px;
+}
+
+.proximos-container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 50px);
+  margin-right: 50px;
+}
+
+.card-proximo .card {
+  height: 100%;
+  padding: 10px 15px 7px 15px;
+}
+
+.card-proximo {
+  margin-top: 8px;
+  max-width: 177px;
+  height: 196px;
+  flex: 1 0 176px;
+  box-sizing: border-box;
+  margin-right: 50px;
+  margin-bottom: 42px;
+}
+
+.proximo-conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.proximo-conteudo .proximo-nome {
+  font-size: 14px;
+  font-weight: 500px;
+  color: #3E3E3E;
+}
+
+.proximo-conteudo .proximo-endereco {
+  font-size: 11px;
+  color: #6B6B6B;
+}
+
+.proximo-conteudo .proximo-data {
+  font-size: 11px;
+  color: #6B6B6B;
+}
+
+.proximo-conteudo img {
+  width: 92px;
+  height: 92px;
+}
+
+.proximo-conteudo button {
+  width: 100%;
+  height: 13px;
+  padding: 0;
+  font-size: 11px;
+  line-height: 11px;
+}
+
+.proximo-conteudo hr{
+  margin: 0;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  border: 0;
+  border-top: 1px solid #e6e6e6;
+}

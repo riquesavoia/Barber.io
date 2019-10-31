@@ -1,0 +1,62 @@
+@import "general.css";
+
+.login-card {
+  height: 642px;
+  width: 525px;
+  padding: 0px 84px 0px 84px;
+}
+
+.register-card {
+  height: 69px;
+  margin-top: 10px;
+  width: 525px;
+  align-items: center;
+  color: #535353;
+}
+
+.register-card .card-body a {
+  color: #4086FF;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.logo-container {
+  margin-top: 69px;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: inherit;
+  padding: 0px;
+}
+
+.register-card .card-body {
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.btn-login {
+  background-color: #3897F0;
+  border: unset;
+}
+
+.forgot-password {
+  font-size: 12px;
+  color: #989898;
+  margin-top: 6px;
+}
+
+#usernameInput {
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+#login-form {
+  width: 100%;
+}
+
+#login-form .row {
+  width: 100%;
+  margin: 0;
+}

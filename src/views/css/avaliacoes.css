@@ -1,0 +1,61 @@
+@import "general.css";
+
+.avaliacao-total {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.avaliacao-total span {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.avaliacao-total img {
+  width: 13px;
+  height: 13px;
+}
+
+img.no-star {
+  opacity: 0.1;
+}
+
+.avaliacoes-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.avaliacao-nome {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.avaliacao-foto {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+.avaliacao-nota {
+  display: flex;
+  align-items: center;
+}
+
+.avaliacao-nota img {
+  width: 11px;
+  height: 11px;
+}
+
+.avaliacao-nota span {
+  font-size: 15px;
+  line-height: 15px;
+  margin-right: 4px;
+}
+
+.avaliacao-card {
+  display: flex;
+  align-items: center;
+  padding-bottom: 13px;
+  margin-bottom: 17px;
+  border-bottom: 1px solid #e6e6e6;
+}
