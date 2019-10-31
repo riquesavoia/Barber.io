@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css\perfil.css">
+    <script src="js\perfil.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+
+      <nav>
+        <div class="header-card">
+          <div class="nav-container">
+            <img class="header-logo" src="resource\header-logo.png" alt="Logo">
+            <div class="nav-link agendamentos-header">
+              <a href="#">
+                <img src="resource\agendamentos-icon.png" alt="Agendamentos">
+                <span>Agendamentos</span>
+              </a>
+            </div>
+            <div class="nav-link avaliacoes-header">
+              <a href="#">
+                <img src="resource\avaliacoes-icon.png" alt="Avaliacoes">
+                <span>Avaliações</span>
+              </a>
+            </div>
+            <div class="nav-link perfil-header">
+              <a href="#">
+                <img src="resource\perfil-icon.png" alt="Perfil">
+                <span>Perfil</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="conteudo-container">
+        <form id="signup-form">
+            <div class="row no-gutters mb-3">
+              <div class="col-sm-12">
+                <input type="text" class="form-control" id="emailInput" placeholder="E-mail">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="nomeInput" placeholder="Nome">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="sobrenomeInput" placeholder="Sobrenome">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="nomeUsuarioInput" placeholder="Nome de usuário">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="nascimentoInput" placeholder="Data de nascimento">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="cpfInput" placeholder="CPF">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="rgInput" placeholder="RG">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="telefoneInput" placeholder="Telefone">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="cepInput" placeholder="CEP">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="estadoInput" placeholder="Estado">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="cidadeInput" placeholder="Cidade">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="ruaInput" placeholder="Rua">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="numeroInput" placeholder="Número">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <select required class="form-control" id="servicoInput">
+                  <option value="" disabled selected>Serviço</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="valorInput" placeholder="Valor/Hora">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="password" class="form-control" id="senhaInput" placeholder="Senha">
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="password" class="form-control" id="confirmarSenhaInput" placeholder="Confirmar senha">
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-12">
+                <textarea class="form-control" id="descricaoInput" rows="6" placeholder="Fale um pouco sobre você..."></textarea>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <button type="submit" class="btn btn-primary btn-signup col-sm-6">Alterar</button>
+              <button type="submit" class="btn btn-primary btn-signup col-sm-6">Excluir</button>
+            </div>
+          </form>
+      </div>
+
+  </body>
+</html>
