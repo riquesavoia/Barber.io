@@ -1,0 +1,57 @@
+@import "general.css";
+
+.form-control {
+  background-color: #ffffff;
+}
+
+.form-control:hover {
+  background-color: #ffffff;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+}
+
+.form-control:active {
+  background-color: #ffffff;
+}
+
+.avaliacao-total {
+  display: flex;
+  align-items: center;
+}
+
+.avaliacao-total span {
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.avaliacao-total img {
+  width: 13px;
+  height: 13px;
+}
+
+.foto-perfil {
+  padding-bottom: 10px;
+}
+
+.foto-perfil img {
+  width: 256px;
+  height: 256px;
+}
+
+.perfil-header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  background-color: #3897F0;
+  border: unset;
+}
+
+.btn-excluir {
+  background-color: #F03949;
+}
