@@ -1,5 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var pool = require('./pool-factory');
+var connectionMiddleWare = require('./connection-middleware');
+
+router.use(connectionMiddleWare(pool));
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
