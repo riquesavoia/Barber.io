@@ -9,7 +9,7 @@ const pool = mysql.createPool({
 
 process.on('SIGINT', () => 
     pool.end(err => {
-        if(err) return console.log(err);
+        if(err) return console.error(err);
         process.exit(0);
     })
 );
