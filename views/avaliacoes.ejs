@@ -7,60 +7,36 @@
   </head>
   <body>
 
-      <nav>
-        <div class="header-card">
-          <div class="nav-container">
-            <img class="header-logo" src="images/header-logo.png" alt="Logo">
-            <div class="nav-link agendamentos-header">
-              <a href="#">
-                <img src="images/agendamentos-icon.png" alt="Agendamentos">
-                <span>Agendamentos</span>
-              </a>
-            </div>
-            <div class="nav-link avaliacoes-header">
-              <a href="#">
-                <img src="images/avaliacoes-icon.png" alt="Avaliacoes">
-                <span>Avaliações</span>
-              </a>
-            </div>
-            <div class="nav-link perfil-header">
-              <a href="#">
-                <img src="images/perfil-icon.png" alt="Perfil">
-                <span>Perfil</span>
-              </a>
+    <%- include partials/navigation.ejs %>
+
+    <div class="conteudo-container">
+      <div class="avaliacoes-container">
+        <span class="conteudo-titulo">Avaliações</span>
+        <div class="avaliacao-total">
+          <span>4,9</span>
+          <img src="images/avaliacoes-icon.png" alt="">
+          <img src="images/avaliacoes-icon.png" alt="">
+          <img src="images/avaliacoes-icon.png" alt="">
+          <img src="images/avaliacoes-icon.png" alt="">
+          <img src="images/avaliacoes-icon.png" alt="">
+        </div>
+
+        <div class="avaliacao-card">
+          <img class="avaliacao-foto" src="images/samples/profile1.png" alt="">
+          <div class="avaliacao-info-container">
+            <span class="avaliacao-nome">José Carlos</span>
+            <div class="avaliacao-nota">
+              <span>5,0</span>
+              <img src="images/avaliacoes-icon.png" alt="">
+              <img src="images/avaliacoes-icon.png" alt="">
+              <img src="images/avaliacoes-icon.png" alt="">
+              <img src="images/avaliacoes-icon.png" alt="">
+              <img src="images/avaliacoes-icon.png" alt="">
             </div>
           </div>
         </div>
-      </nav>
 
-      <div class="conteudo-container">
-        <div class="avaliacoes-container">
-          <span class="conteudo-titulo">Avaliações</span>
-          <div class="avaliacao-total">
-            <span>4,9</span>
-            <img src="images/avaliacoes-icon.png" alt="">
-            <img src="images/avaliacoes-icon.png" alt="">
-            <img src="images/avaliacoes-icon.png" alt="">
-            <img src="images/avaliacoes-icon.png" alt="">
-            <img src="images/avaliacoes-icon.png" alt="">
-          </div>
-
-          <div class="avaliacao-card">
-            <img class="avaliacao-foto" src="images/samples/profile1.png" alt="">
-            <div class="avaliacao-info-container">
-              <span class="avaliacao-nome">José Carlos</span>
-              <div class="avaliacao-nota">
-                <span>5,0</span>
-                <img src="images/avaliacoes-icon.png" alt="">
-                <img src="images/avaliacoes-icon.png" alt="">
-                <img src="images/avaliacoes-icon.png" alt="">
-                <img src="images/avaliacoes-icon.png" alt="">
-                <img src="images/avaliacoes-icon.png" alt="">
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
+    </div>
   </body>
 </html>

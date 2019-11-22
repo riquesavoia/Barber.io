@@ -7,122 +7,97 @@
   </head>
   <body>
 
-      <nav>
-        <div class="header-card">
-          <div class="nav-container">
-            <img class="header-logo" src="images/header-logo.png" alt="Logo">
-            <div class="nav-link agendamentos-header">
-              <a href="#">
-                <img src="images/agendamentos-icon.png" alt="Agendamentos">
-                <span>Agendamentos</span>
-              </a>
-            </div>
-            <div class="nav-link avaliacoes-header">
-              <a href="#">
-                <img src="images/avaliacoes-icon.png" alt="Avaliacoes">
-                <span>Avaliações</span>
-              </a>
-            </div>
-            <div class="nav-link perfil-header">
-              <a href="#">
-                <img src="images/perfil-icon.png" alt="Perfil">
-                <span>Perfil</span>
-              </a>
+    <%- include partials/navigation.ejs %>
+    
+    <div class="conteudo-container">
+      <div class="agendamentos-pendentes-container">
+        <span class="conteudo-titulo">Pendentes</span>
+
+        <div class="card-pendente">
+          <div class="pendente-data">
+            <span>SET</span>
+            <span>23</span>
+          </div>
+          <div class="card">
+            <div class="pendente-conteudo">
+              <img class="pendente-foto" src="images/samples/profile1.png" alt="">
+              <div class="pendente-info-container">
+                <span class="pendente-nome">José Carlos</span>
+                <span class="pendente-horario">10:00-12:00</span>
+              </div>
+              <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
+              <div class="pendente-botoes-container">
+                <img src="images/accept-icon.png" alt="Aceitar">
+                <img src="images/refuse-icon.png" alt="Recusar">
+              </div>
             </div>
           </div>
         </div>
-      </nav>
 
-
-      <div class="conteudo-container">
-        <div class="agendamentos-pendentes-container">
-          <span class="conteudo-titulo">Pendentes</span>
-
-          <div class="card-pendente">
-            <div class="pendente-data">
-              <span>SET</span>
-              <span>23</span>
-            </div>
-            <div class="card">
-              <div class="pendente-conteudo">
-                <img class="pendente-foto" src="images/samples/profile1.png" alt="">
-                <div class="pendente-info-container">
-                  <span class="pendente-nome">José Carlos</span>
-                  <span class="pendente-horario">10:00-12:00</span>
-                </div>
-                <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
-                <div class="pendente-botoes-container">
-                  <img src="images/accept-icon.png" alt="Aceitar">
-                  <img src="images/refuse-icon.png" alt="Recusar">
-                </div>
+        <div class="card-pendente">
+          <div class="pendente-data">
+            <span>SET</span>
+            <span>23</span>
+          </div>
+          <div class="card">
+            <div class="pendente-conteudo">
+              <img class="pendente-foto" src="images/samples/profile1.png" alt="">
+              <div class="pendente-info-container">
+                <span class="pendente-nome">José Carlos</span>
+                <span class="pendente-horario">10:00-12:00</span>
+              </div>
+              <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
+              <div class="pendente-botoes-container">
+                <img src="images/accept-icon.png" alt="Aceitar">
+                <img src="images/refuse-icon.png" alt="Recusar">
               </div>
             </div>
           </div>
-
-          <div class="card-pendente">
-            <div class="pendente-data">
-              <span>SET</span>
-              <span>23</span>
-            </div>
-            <div class="card">
-              <div class="pendente-conteudo">
-                <img class="pendente-foto" src="images/samples/profile1.png" alt="">
-                <div class="pendente-info-container">
-                  <span class="pendente-nome">José Carlos</span>
-                  <span class="pendente-horario">10:00-12:00</span>
-                </div>
-                <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
-                <div class="pendente-botoes-container">
-                  <img src="images/accept-icon.png" alt="Aceitar">
-                  <img src="images/refuse-icon.png" alt="Recusar">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-pendente">
-            <div class="pendente-data">
-              <span>SET</span>
-              <span>23</span>
-            </div>
-            <div class="card">
-              <div class="pendente-conteudo">
-                <img class="pendente-foto" src="images/samples/profile1.png" alt="">
-                <div class="pendente-info-container">
-                  <span class="pendente-nome">José Carlos</span>
-                  <span class="pendente-horario">10:00-12:00</span>
-                </div>
-                <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
-                <div class="pendente-botoes-container">
-                  <img src="images/accept-icon.png" alt="Aceitar">
-                  <img src="images/refuse-icon.png" alt="Recusar">
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <div class="agendamentos-proximos-container">
-          <span class="conteudo-titulo">Próximos</span>
-          <div class="proximos-container-fluid">
-
-            <div class="card-proximo">
-              <div class="card">
-                <div class="proximo-conteudo">
-                  <img src="images/samples/profile1.png" alt="Profile">
-                  <span class="proximo-nome">José Carlos</span>
-                  <hr>
-                  <span class="proximo-data">23 de outubro 10:00 - 12:30</span>
-                  <span class="proximo-endereco">Rua José Bonifácio, 293</span>
-                  <button class="btn btn-primary">Finalizar</button>
-                </div>
+        <div class="card-pendente">
+          <div class="pendente-data">
+            <span>SET</span>
+            <span>23</span>
+          </div>
+          <div class="card">
+            <div class="pendente-conteudo">
+              <img class="pendente-foto" src="images/samples/profile1.png" alt="">
+              <div class="pendente-info-container">
+                <span class="pendente-nome">José Carlos</span>
+                <span class="pendente-horario">10:00-12:00</span>
+              </div>
+              <span class="pendente-descricao">"Olá Marcos, gostaria de solicitar seus serviços para minha casa"</span>
+              <div class="pendente-botoes-container">
+                <img src="images/accept-icon.png" alt="Aceitar">
+                <img src="images/refuse-icon.png" alt="Recusar">
               </div>
             </div>
-
           </div>
+        </div>
+
+      </div>
+
+      <div class="agendamentos-proximos-container">
+        <span class="conteudo-titulo">Próximos</span>
+        <div class="proximos-container-fluid">
+
+          <div class="card-proximo">
+            <div class="card">
+              <div class="proximo-conteudo">
+                <img src="images/samples/profile1.png" alt="Profile">
+                <span class="proximo-nome">José Carlos</span>
+                <hr>
+                <span class="proximo-data">23 de outubro 10:00 - 12:30</span>
+                <span class="proximo-endereco">Rua José Bonifácio, 293</span>
+                <button class="btn btn-primary">Finalizar</button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+    </div>
 
   </body>
 </html>
