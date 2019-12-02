@@ -106,6 +106,7 @@ CREATE TABLE pagamento_profissional(
 		REFERENCES pagamento(id_pgto),
 	FOREIGN KEY(cod_profissional)
 		REFERENCES profissional(id_profissional)
+        ON DELETE CASCADE
 );
 
 INSERT INTO categoria() VALUES(1, 'Administração, negócios e serviços');
@@ -139,4 +140,12 @@ INSERT INTO servico(id_categoria, nome) VALUES(6, 'Cabeleireiro');
 INSERT INTO servico(id_categoria, nome) VALUES(6, 'Faxineiro');
 INSERT INTO servico(id_categoria, nome) VALUES(6, 'Cozinheiro');
 
+INSERT INTO pagamento(nome) VALUES('Cartão de crédito');
+INSERT INTO pagamento(nome) VALUES('Cartão de débito');
+INSERT INTO pagamento(nome) VALUES('Dinheiro');
+INSERT INTO pagamento(nome) VALUES('Mercado pago');
+INSERT INTO pagamento(nome) VALUES('Paypal');
+
 INSERT INTO profissional (`nome`, `sobrenome`, `email`, `nome_usuario`, `senha`, `rg`, `cpf`, `telefone`, `data_nasc`, `sexo`, `cep`, `estado`, `cidade`, `rua`, `num_res`, `id_servico`, `preco_hora`, `descricao`) VALUES ('João', 'Silva', 'joaosilva@gmail.com', 'joao', 'senha123', '584928394', '49382938492', '983948323', '1980-04-08', 'M', '13849283', 'São Paulo', 'Campinas', 'Rua Alfredo Jose', '32', '1', '70', 'Olá, meu nome é joão');
+INSERT INTO pagamento_profissional VALUES(1, 1);
+INSERT INTO pagamento_profissional VALUES(2, 1);

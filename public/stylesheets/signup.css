@@ -1,9 +1,8 @@
 @import "general.css";
 
 .signup-card {
-  height: 693px;
   width: 525px;
-  padding: 25px 25px 30px 25px;
+  padding: 25px 25px 25px 25px;
 }
 
 .login-card {

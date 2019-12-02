@@ -9,6 +9,9 @@ $(document).ready(function(){
     });
 
     $('#pagamentoInput').selectpicker();
+
+    $('#confirmarSenhaInput').change(verificarSenhas);
+    $('#senhaInput').change(verificarSenhas);
 });
 
 function cadastrarProfissional(data) {
@@ -24,4 +27,18 @@ function cadastrarProfissional(data) {
             alert(res.responseJSON.error);
         }
     })
+}
+
+function verificarSenhas() {
+    const senha = $('#senhaInput').val();
+    const confirmarSenha = $('#confirmarSenhaInput').val();
+    if(senha && confirmarSenha) {
+        if (senha === confirmarSenha) {
+            $('#senha-feedback').hide();
+            $('#confirmarSenhaInput').removeClass('is-invalid');
+            return;
+        }
+        $('#confirmarSenhaInput').addClass('is-invalid');
+        $('#senha-feedback').show();
+    }
 }

@@ -108,6 +108,9 @@
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
                   <input type="password" class="form-control" id="confirmarSenhaInput" placeholder="Confirmar senha">
+                  <div id="senha-feedback" class="invalid-feedback">
+                    As senhas não coincidem.
+                  </div>
                 </div>
               </div>
               <div class="row no-gutters">
@@ -116,7 +119,7 @@
                 </div>
               </div>
               <div class="row no-gutters">
-                <button type="submit" class="btn btn-primary btn-signup col-sm-12">Cadastrar</button>
+                <button onclick="return $('.is-invalid').length<1" type="submit" class="btn btn-primary btn-signup col-sm-12">Cadastrar</button>
               </div>
             </form>
           </div>
