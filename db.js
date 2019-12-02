@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 const pool = mysql.createPool({
     waitForConnections: false,
-    host: 'localhost',
-    user: 'root',
-    password: '', 
-    database: 'opus'
+    host: 'esparta',
+    user: 'bdac150',
+    password: 'Vyowl1',
+    database: 'bdac150'
 });
 
 process.on('SIGINT', () => 

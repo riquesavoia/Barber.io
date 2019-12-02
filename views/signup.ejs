@@ -18,120 +18,116 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div class="row">
-        <div class="card signup-card">
-          <div class="card-body">
-            <form id="signup-form" autocomplete="off">
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="emailInput" placeholder="E-mail" name="email" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <select required class="form-control" id="sexoInput" name="sexo">
-                    <option value="" disabled selected>Sexo</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                  </select>
-                </div>
+      <div class="card signup-card">
+        <div class="card-body">
+          <form id="signup-form" autocomplete="off">
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="emailInput" placeholder="E-mail" name="email" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="nomeInput" placeholder="Nome" name="nome" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="sobrenomeInput" placeholder="Sobrenome" name="sobrenome" required>
-                </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <select required class="form-control" id="sexoInput" name="sexo">
+                  <option value="" disabled selected>Sexo</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Feminino</option>
+                </select>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="nomeUsuarioInput" placeholder="Nome de usuário" name="nome_usuario" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="nascimentoInput" placeholder="Data de nascimento" name="data_nasc" required>
-                </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="nomeInput" placeholder="Nome" name="nome" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="cpfInput" placeholder="CPF" name="cpf" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="rgInput" placeholder="RG" name="rg" required>
-                </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="sobrenomeInput" placeholder="Sobrenome" name="sobrenome" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="telefoneInput" placeholder="Telefone" name="telefone" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="cepInput" placeholder="CEP" name="cep" required>
-                </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="nomeUsuarioInput" placeholder="Nome de usuário" name="nome_usuario" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="estadoInput" placeholder="Estado" name="estado" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="cidadeInput" placeholder="Cidade" name="cidade" required>
-                </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="nascimentoInput" placeholder="Data de nascimento" name="data_nasc" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="ruaInput" placeholder="Rua" name="rua" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="numeroInput" placeholder="Número" name="num_res" required>
-                </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="cpfInput" placeholder="CPF" name="cpf" required>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <select required class="form-control" id="servicoInput" name="id_servico" required>
-                    <option value="" disabled selected>Serviço</option>
-                    <% servicos.forEach(function(servico){ %>
-                      <option value="<%=servico.id_servico%>"><%=servico.nome%></option>
-                    <%}) %>
-                  </select>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="valorInput" placeholder="Valor/Hora" name="preco_hora" required>
-                </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="rgInput" placeholder="RG" name="rg" required>
               </div>
-              <div class="col-sm-12 pl-0 pr-0 mb-3">
-                <select required class="form-control" data-style="multiple-select" id="pagamentoInput" name="formas_pagamento" title="Formas de pagamento" name="formas_pagamento" multiple required>
-                  <% formas_pagamento.forEach(function(pagamento){ %>
-                    <option value="<%=pagamento.id_pgto%>"><%=pagamento.nome%></option>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="telefoneInput" placeholder="Telefone" name="telefone" required>
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="cepInput" placeholder="CEP" name="cep" required>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="estadoInput" placeholder="Estado" name="estado" required>
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="cidadeInput" placeholder="Cidade" name="cidade" required>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="text" class="form-control" id="ruaInput" placeholder="Rua" name="rua" required>
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="numeroInput" placeholder="Número" name="num_res" required>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <select required class="form-control" id="servicoInput" name="id_servico" required>
+                  <option value="" disabled selected>Serviço</option>
+                  <% servicos.forEach(function(servico){ %>
+                    <option value="<%=servico.id_servico%>"><%=servico.nome%></option>
                   <%}) %>
                 </select>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-6 pr-2 mb-3">
-                  <input type="password" class="form-control" id="senhaInput" placeholder="Senha" name="senha" required>
-                </div>
-                <div class="col-sm-6 pl-2 mb-3">
-                  <input type="password" class="form-control" id="confirmarSenhaInput" placeholder="Confirmar senha">
-                  <div id="senha-feedback" class="invalid-feedback">
-                    As senhas não coincidem.
-                  </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="text" class="form-control" id="valorInput" placeholder="Valor/Hora" name="preco_hora" required>
+              </div>
+            </div>
+            <div class="col-sm-12 pl-0 pr-0 mb-3">
+              <select required class="form-control" data-style="multiple-select" id="pagamentoInput" name="formas_pagamento" title="Formas de pagamento" name="formas_pagamento" multiple required>
+                <% formas_pagamento.forEach(function(pagamento){ %>
+                  <option value="<%=pagamento.id_pgto%>"><%=pagamento.nome%></option>
+                <%}) %>
+              </select>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-6 pr-2 mb-3">
+                <input type="password" class="form-control" id="senhaInput" placeholder="Senha" name="senha" required>
+              </div>
+              <div class="col-sm-6 pl-2 mb-3">
+                <input type="password" class="form-control" id="confirmarSenhaInput" placeholder="Confirmar senha">
+                <div id="senha-feedback" class="invalid-feedback">
+                  As senhas não coincidem.
                 </div>
               </div>
-              <div class="row no-gutters">
-                <div class="col-sm-12">
-                  <textarea class="form-control" id="descricaoInput" rows="6" placeholder="Fale um pouco sobre você..." name="descricao" required></textarea>
-                </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-sm-12">
+                <textarea class="form-control" id="descricaoInput" rows="6" placeholder="Fale um pouco sobre você..." name="descricao" required></textarea>
               </div>
-              <div class="row no-gutters">
-                <button onclick="return $('.is-invalid').length<1" type="submit" class="btn btn-primary btn-signup col-sm-12">Cadastrar</button>
-              </div>
-            </form>
-          </div>
+            </div>
+            <div class="row no-gutters">
+              <button onclick="return $('.is-invalid').length<1" type="submit" class="btn btn-primary btn-signup col-sm-12">Cadastrar</button>
+            </div>
+          </form>
         </div>
       </div>
 
-      <div class="row">
-        <div class="card login-card">
-          <div class="card-body">
-            <span>Já possui uma conta?&nbsp;</span>
-            <a href="/">Entre</a>
-          </div>
+      <div class="card login-card">
+        <div class="card-body">
+          <span>Já possui uma conta?&nbsp;</span>
+          <a href="/">Entre</a>
         </div>
       </div>
     </div>
