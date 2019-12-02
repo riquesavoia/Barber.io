@@ -4,11 +4,13 @@
   height: 642px;
   width: 525px;
   padding: 0px 84px 0px 84px;
+  margin-top: auto;
 }
 
 .register-card {
   height: 69px;
   margin-top: 10px;
+  margin-bottom: auto;
   width: 525px;
   align-items: center;
   color: #535353;

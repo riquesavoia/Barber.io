@@ -24,7 +24,7 @@ function inserirDadosForm() {
     $('#nomeInput').val(usuario.nome);
     $('#sobrenomeInput').val(usuario.sobrenome);
     $('#nomeUsuarioInput').attr('value', usuario.nome_usuario);
-    $('#nascimentoInput').val(usuario.data_nasc);
+    $('#nascimentoInput').datepicker('update', usuario.data_nasc);
     $('#cpfInput').val(usuario.cpf);
     $('#rgInput').val(usuario.rg);
     $('#telefoneInput').val(usuario.telefone);
