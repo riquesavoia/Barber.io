@@ -6,6 +6,11 @@ module.exports = pool => (req, res, next) => {
 
         next();
 
-        res.on('finish', () => req.connection.release());
+        res.on('finish', () => {
+            if (pool._freeConnections.indexOf(connection) < 0) {
+                console.log('Releasing connection');
+                req.connection.release();
+            }
+        });
     });
 };

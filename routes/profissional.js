@@ -1,22 +1,43 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../db');
-const connectionMiddleWare = require('../connection-middleware');
 const ProfissionalService = require('../services/profissional');
 
-router.use(connectionMiddleWare(pool));
-
 router.get('/selectAll', (req, res, next) => {
-    new ProfissionalService(req.connection)
+    new ProfissionalService(pool)
     .selectAll()
     .then(profissionais => res.json(profissionais))
     .catch(next)
 });
 
 router.post('/insert', (req, res, next) => {
-    new ProfissionalService(req.connection)
+    console.log(req.body);
+    new ProfissionalService(pool)
     .insert(req.body)
-    .then(data => res.send(data))
+    .then(data => res.status(201).send({status: 'success'}))
+    .catch(next)
+});
+
+router.post('/login', (req, res, next) => {
+    new ProfissionalService(pool)
+    .login(req.body)
+    .then(data => res.status(201).send(data))
+    .catch(next)
+});
+
+router.post('/update', (req, res, next) => {
+    console.log(req.body);
+    new ProfissionalService(pool)
+    .update(req.body)
+    .then(data => res.status(201).send({status: 'success'}))
+    .catch(next)
+});
+
+router.post('/delete', (req, res, next) => {
+    const idProfissional = req.body.id_profissional;
+    new ProfissionalService(pool)
+    .delete(idProfissional)
+    .then(data => res.status(201).send({status: 'success'}))
     .catch(next)
 });
 

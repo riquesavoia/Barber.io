@@ -1,7 +1,7 @@
 @import "general.css";
 
 .signup-card {
-  height: 642px;
+  height: 693px;
   width: 525px;
   padding: 25px 25px 30px 25px;
 }
@@ -48,4 +48,15 @@
 
 #signup-form .row {
   width: 100%;
+}
+
+.multiple-select {
+  font-size: 12px;
+  background-color: #fafafa;
+  border-color: #e6e6e6;
+  border-radius: 0px;
+}
+
+.bootstrap-select .dropdown-menu.inner {
+  font-size: 12px;
 }

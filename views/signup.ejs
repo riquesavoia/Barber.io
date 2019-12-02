@@ -1,7 +1,17 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="stylesheets/jquery-ui.CSS"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-datepicker3.standalone.min.css"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="stylesheets/signup.css">
+    <script src="javascripts/lib/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/jquery-ui.min.js"></script>
+    <script src="javascripts/lib/popper.js"></script>
+    <script src="javascripts/lib/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/bootstrap-datepicker.pt-BR.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/bootstrap.min.js" type="text/javascript"></script>
     <script src="javascripts/signup.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta charset="utf-8">
@@ -11,77 +21,90 @@
       <div class="row">
         <div class="card signup-card">
           <div class="card-body">
-            <form action="/api/profissional/insert" id="signup-form" method="POST">
-              <div class="row no-gutters mb-3">
-                <div class="col-sm-12">
-                  <input type="text" class="form-control" id="emailInput" placeholder="E-mail" name="email">
-                </div>
-              </div>
+            <form id="signup-form" autocomplete="off">
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="nomeInput" placeholder="Nome" name="nome">
+                  <input type="text" class="form-control" id="emailInput" placeholder="E-mail" name="email" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="sobrenomeInput" placeholder="Sobrenome">
+                  <select required class="form-control" id="sexoInput" name="sexo">
+                    <option value="" disabled selected>Sexo</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                  </select>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="nomeUsuarioInput" placeholder="Nome de usuário">
+                  <input type="text" class="form-control" id="nomeInput" placeholder="Nome" name="nome" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="nascimentoInput" placeholder="Data de nascimento">
+                  <input type="text" class="form-control" id="sobrenomeInput" placeholder="Sobrenome" name="sobrenome" required>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="cpfInput" placeholder="CPF">
+                  <input type="text" class="form-control" id="nomeUsuarioInput" placeholder="Nome de usuário" name="nome_usuario" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="rgInput" placeholder="RG">
+                  <input type="text" class="form-control" id="nascimentoInput" placeholder="Data de nascimento" name="data_nasc" required>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="telefoneInput" placeholder="Telefone">
+                  <input type="text" class="form-control" id="cpfInput" placeholder="CPF" name="cpf" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="cepInput" placeholder="CEP">
+                  <input type="text" class="form-control" id="rgInput" placeholder="RG" name="rg" required>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="estadoInput" placeholder="Estado">
+                  <input type="text" class="form-control" id="telefoneInput" placeholder="Telefone" name="telefone" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="cidadeInput" placeholder="Cidade">
+                  <input type="text" class="form-control" id="cepInput" placeholder="CEP" name="cep" required>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="text" class="form-control" id="ruaInput" placeholder="Rua">
+                  <input type="text" class="form-control" id="estadoInput" placeholder="Estado" name="estado" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="numeroInput" placeholder="Número">
+                  <input type="text" class="form-control" id="cidadeInput" placeholder="Cidade" name="cidade" required>
                 </div>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <select required class="form-control" id="servicoInput">
+                  <input type="text" class="form-control" id="ruaInput" placeholder="Rua" name="rua" required>
+                </div>
+                <div class="col-sm-6 pl-2 mb-3">
+                  <input type="text" class="form-control" id="numeroInput" placeholder="Número" name="num_res" required>
+                </div>
+              </div>
+              <div class="row no-gutters">
+                <div class="col-sm-6 pr-2 mb-3">
+                  <select required class="form-control" id="servicoInput" name="id_servico" required>
                     <option value="" disabled selected>Serviço</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <% servicos.forEach(function(servico){ %>
+                      <option value="<%=servico.id_servico%>"><%=servico.nome%></option>
+                    <%}) %>
                   </select>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
-                  <input type="text" class="form-control" id="valorInput" placeholder="Valor/Hora">
+                  <input type="text" class="form-control" id="valorInput" placeholder="Valor/Hora" name="preco_hora" required>
                 </div>
+              </div>
+              <div class="col-sm-12 pl-0 pr-0 mb-3">
+                <select required class="form-control" data-style="multiple-select" id="pagamentoInput" name="formas_pagamento" title="Formas de pagamento" name="formas_pagamento" multiple required>
+                  <% formas_pagamento.forEach(function(pagamento){ %>
+                    <option value="<%=pagamento.id_pgto%>"><%=pagamento.nome%></option>
+                  <%}) %>
+                </select>
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-6 pr-2 mb-3">
-                  <input type="password" class="form-control" id="senhaInput" placeholder="Senha">
+                  <input type="password" class="form-control" id="senhaInput" placeholder="Senha" name="senha" required>
                 </div>
                 <div class="col-sm-6 pl-2 mb-3">
                   <input type="password" class="form-control" id="confirmarSenhaInput" placeholder="Confirmar senha">
@@ -89,7 +112,7 @@
               </div>
               <div class="row no-gutters">
                 <div class="col-sm-12">
-                  <textarea class="form-control" id="descricaoInput" rows="6" placeholder="Fale um pouco sobre você..."></textarea>
+                  <textarea class="form-control" id="descricaoInput" rows="6" placeholder="Fale um pouco sobre você..." name="descricao" required></textarea>
                 </div>
               </div>
               <div class="row no-gutters">

@@ -1,6 +1,13 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="stylesheets/jquery-ui.CSS"/>
+    <link rel="stylesheet" href="stylesheets/bootstrap-datepicker3.standalone.min.css"/>
+    <script src="javascripts/lib/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/jquery-ui.min.js"></script>
+    <script src="javascripts/lib/bootstrap-datepicker.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/bootstrap-datepicker.pt-BR.min.js" type="text/javascript"></script>
+    <script src="javascripts/lib/bootstrap.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheets/index.css">
     <script src="javascripts/index.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -15,11 +22,14 @@
           <form id="login-form">
             <div class="form-group">
               <div class="row">
-                <input type="username" class="form-control col-sm-12" id="usernameInput" placeholder="Usuário">
+                <input type="username" class="form-control col-sm-12" id="usernameInput" placeholder="Usuário" name="nome_usuario">
               </div>
               <div class="row">
-                <input type="password" class="form-control col-sm-12" id="passwordInput" placeholder="Senha">
+                <input type="password" class="form-control col-sm-12" id="passwordInput" placeholder="Senha" name="senha">
               </div>
+              <div class="row">
+                  <span class="invalid-user"></span>
+                </div>
             </div>
             <div class="row">
               <button type="submit" class="btn btn-primary btn-login col-sm-12">Entrar</button>

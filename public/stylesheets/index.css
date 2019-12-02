@@ -48,7 +48,7 @@
 }
 
 #usernameInput {
-  margin-top: 14px;
+  margin-top: 30px;
   margin-bottom: 6px;
 }
 
@@ -59,4 +59,9 @@
 #login-form .row {
   width: 100%;
   margin: 0;
+}
+
+.invalid-user {
+  font-size: 14px;
+  color: #F03949;
 }
