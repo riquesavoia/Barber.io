@@ -1,3 +1,5 @@
+<script src="javascripts/lib/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="javascripts/navigation.js" type="text/javascript"></script>
 <nav>
     <div class="header-card">
       <div class="nav-container">
@@ -15,10 +17,16 @@
           </a>
         </div>
         <div class="nav-link perfil-header">
-          <a href="/perfil">
+          <a class="perfil-dropdown-link" onclick="mostrarDropdown(event)">
             <img src="images/perfil-icon.png" alt="Perfil">
             <span>Perfil</span>
           </a>
+          <div class="perfil-dropdown d-none">
+            <ul>
+              <li><a href="/perfil">Editar perfil</a></li>
+              <li><a href="/">Logout</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
