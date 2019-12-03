@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log('Ready');
     $('body').click(function(){
         $('.perfil-dropdown').addClass('d-none');
     });

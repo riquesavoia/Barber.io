@@ -29,7 +29,7 @@ router.post('/update', (req, res, next) => {
     console.log(req.body);
     new ProfissionalService(pool)
     .update(req.body)
-    .then(data => res.status(201).send({status: 'success'}))
+    .then(data => res.status(201).send(req.body))
     .catch(next)
 });
 

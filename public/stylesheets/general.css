@@ -116,6 +116,7 @@ select:invalid {
 
 .perfil-header {
   margin-left: auto;
+  position: relative;
 }
 
 .perfil-header img {
@@ -132,6 +133,8 @@ select:invalid {
 }
 
 .perfil-dropdown {
+  right: 0;
+  top: 45px;
   background-color: #FFF;
   list-style-type: none;
   position: absolute;
@@ -145,9 +148,9 @@ select:invalid {
 }
 
 .perfil-dropdown li{
-  height: 30px;
-  line-height: 30px;
-  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  width: 110px;
   padding-left: 10px;
 }
 

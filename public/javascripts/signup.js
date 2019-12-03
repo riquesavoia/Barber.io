@@ -1,6 +1,14 @@
 $(document).ready(function(){
+    $('#nascimentoInputReal').datepicker({
+        language: 'pt-BR',
+        format: 'yyyy-mm-dd'
+    });
+
     $('#nascimentoInput').datepicker({
-        format: 'yyyy-mm-dd' 
+        language: 'pt-BR',
+        format: 'dd/mm/yyyy'
+    }).on('changeDate', function(e){
+        $('#nascimentoInputReal').datepicker('update', e.date);
     });
 
     $('#signup-form').submit(function() {

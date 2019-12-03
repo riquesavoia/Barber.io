@@ -1,6 +1,14 @@
 $(document).ready(function(){
+    $('#nascimentoInputReal').datepicker({
+        language: 'pt-BR',
+        format: 'yyyy-mm-dd'
+    });
+
     $('#nascimentoInput').datepicker({
-        format: 'yyyy-mm-dd' 
+        language: 'pt-BR',
+        format: 'dd/mm/yyyy'
+    }).on('changeDate', function(e){
+        $('#nascimentoInputReal').datepicker('update', e.date);
     });
 
     inserirDadosForm();
@@ -12,19 +20,22 @@ $(document).ready(function(){
 
     $('.btn-excluir').click(function() {
         excluirPerfil($('#idProfissional').val());
-    })
+    });
+
 });
 
 function inserirDadosForm() {
     const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-    console.log(usuario);
+    const dataNascimento = new Date(usuario.data_nasc);
+    dataNascimento.setHours(dataNascimento.getHours()+5);
+
     $('#idProfissional').val(usuario.id_profissional);
     $('#emailInput').val(usuario.email);
     $('#sexoInput').val(usuario.sexo);
     $('#nomeInput').val(usuario.nome);
     $('#sobrenomeInput').val(usuario.sobrenome);
     $('#nomeUsuarioInput').attr('value', usuario.nome_usuario);
-    $('#nascimentoInput').datepicker('update', usuario.data_nasc);
+    $('#nascimentoInput').datepicker('setDate', dataNascimento);
     $('#cpfInput').val(usuario.cpf);
     $('#rgInput').val(usuario.rg);
     $('#telefoneInput').val(usuario.telefone);
@@ -46,7 +57,8 @@ function editarPerfil(data) {
         type: 'POST',
         data: data,
         success:function(res){
-            alert('Perfil alterado com sucesso!');
+            sessionStorage.setItem('usuario', JSON.stringify(res));
+            $('#modal-sucesso').modal('show');
         },
         error:function(res){
             alert(res.responseJSON.error);
