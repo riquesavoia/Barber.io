@@ -1,7 +1,6 @@
 const mysql = require('mysql');
 
 const pool = mysql.createPool({
-    waitForConnections: false,
     host: 'esparta',
     user: 'bdac150',
     password: 'Vyowl1',
