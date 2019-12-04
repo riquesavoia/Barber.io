@@ -7,6 +7,7 @@ const logger = require('morgan');
 const webRouter = require('./routes/web');
 const agendamentoRouter = require('./routes/agendamento');
 const avaliacaoRouter = require('./routes/avaliacao');
+const categoriaRouter = require('./routes/categoria');
 const clienteRouter = require('./routes/cliente');
 const profissionalRouter = require('./routes/profissional');
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', webRouter);
 app.use('/api/agendamento', agendamentoRouter);
 app.use('/api/avaliacao', avaliacaoRouter);
+app.use('/api/categoria', categoriaRouter);
 app.use('/api/cliente', clienteRouter);
 app.use('/api/profissional', profissionalRouter);
 
