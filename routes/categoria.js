@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../db');
-const ClienteService = require('../services/cliente');
+const CategoriaService = require('../services/categoria');
 
 router.get('/selectAll', (req, res, next) => {
-    new ClienteService(pool)
+    new CategoriaService(pool)
     .selectAll()
-    .then(clientes => res.json(clientes))
+    .then(categorias => res.json(categorias))
     .catch(next)
 });
 

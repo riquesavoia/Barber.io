@@ -1,8 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const pool = require('../db');
+const AvaliacaoService = require('../services/avaliacao');
 
-router.get('/selectAll/:id', function(req, res, next) {
-    res.send(req.params);
+router.get('/selectAllByProfissional/:id', (req, res, next) => {
+    new AvaliacaoService(pool)
+    .selectAllByProfissional(req.params.id)
+    .then(avaliacoes => res.json(avaliacoes))
+    .catch(next)
 });
 
 module.exports = router;
