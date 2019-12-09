@@ -83,8 +83,8 @@ CREATE TABLE agendamento (
 	id_agend INT(11) NOT NULL AUTO_INCREMENT,
 	descricao VARCHAR(255),
 	valor INT,
-	data_ini date,
-	data_fim date,
+	data_ini datetime,
+	data_fim datetime,
 	local_atend VARCHAR(255),
     status INT(1),
 	id_pgto INT(11),
@@ -147,5 +147,11 @@ INSERT INTO pagamento(nome) VALUES('Mercado pago');
 INSERT INTO pagamento(nome) VALUES('Paypal');
 
 INSERT INTO profissional (`nome`, `sobrenome`, `email`, `nome_usuario`, `senha`, `rg`, `cpf`, `telefone`, `data_nasc`, `sexo`, `cep`, `estado`, `cidade`, `rua`, `num_res`, `id_servico`, `preco_hora`, `descricao`) VALUES ('João', 'Silva', 'joaosilva@gmail.com', 'joao', 'senha123', '584928394', '49382938492', '983948323', '1980-04-08', 'M', '13849283', 'São Paulo', 'Campinas', 'Rua Alfredo Jose', '32', '1', '70', 'Olá, meu nome é joão');
+INSERT INTO cliente (`nome`, `sobrenome`, `email`, `nome_usuario`, `senha`, `rg`, `cpf`, `telefone`, `data_nasc`, `num_res`, `sexo`, `cep`, `estado`, `cidade`, `rua`, `numero`, `descricao`) VALUES ('Marcelo', 'Andrade', 'marceloandrade@gmail.com', 'marcelo', 'senha123', '48594839', '4958493', '86758493', '1984-06-02', '12', 'M', '1349283', 'São Paulo', 'Campinas', 'Rua Paulo Silva', '14', 'Olá, meu nome é Marcelo');
+INSERT INTO cliente (`nome`, `sobrenome`, `email`, `nome_usuario`, `senha`, `rg`, `cpf`, `telefone`, `data_nasc`, `num_res`, `sexo`, `cep`, `estado`, `cidade`, `rua`, `numero`, `descricao`) VALUES ('Roberto', 'Carvalho', 'roberto@gmail.com', 'roberto', 'senha123', '4124124', '523525235', '235235235', '1982-03-02', '12', 'M', '1349283', 'São Paulo', 'Campinas', 'Rua Treze', '14', 'Olá, meu nome é Roberto');
+INSERT INTO agendamento (`descricao`, `valor`, `data_ini`, `data_fim`, `local_atend`, `status`, `id_pgto`, `cod_profissional`, `cod_cliente`) VALUES ('Bom dia João, gostaria de seus serviços', '90', '2019-06-07 08:00:00', '2019-06-04 10:00:00', 'Rua Maria Souza', '0', '1', '1', '1');
+INSERT INTO agendamento (`descricao`, `valor`, `data_ini`, `data_fim`, `local_atend`, `status`, `id_pgto`, `cod_profissional`, `cod_cliente`) VALUES ('Olá, gostaria de seu serviço', '90', '2019-06-05 14:00:00', '2019-06-05 16:00:00', 'Rua Paulo José', '0', '1', '1', '1');
+INSERT INTO agendamento (`descricao`, `valor`, `data_ini`, `data_fim`, `local_atend`, `status`, `id_pgto`, `cod_profissional`, `cod_cliente`) VALUES ('Bom dia, tudo bem? preciso de seu serviço', '90', '2019-03-02 16:00:00', '2019-03-02 17:30:00', 'Rua Paulo Silva', '0', '1', '1', '2');
+
 INSERT INTO pagamento_profissional VALUES(1, 1);
 INSERT INTO pagamento_profissional VALUES(2, 1);

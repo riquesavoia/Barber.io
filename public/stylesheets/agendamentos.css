@@ -70,6 +70,7 @@
 .pendente-botoes-container img{
   width: 26px;
   height: 26px;
+  cursor: pointer;
 }
 
 .card-pendente:last-child {

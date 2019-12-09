@@ -1,0 +1,36 @@
+<%
+function formatarData(inicio, fim) {
+    let dataInicio = new Date(inicio);
+    let dataFim = new Date(fim);
+    let meses = ["Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto", "Septembro", "Outubro", "Novembro", "Dezembro"];
+
+    let dia = dataInicio.getDate();
+    let mes = meses[dataInicio.getMonth()];
+
+    horasInicio = dataInicio.getHours();
+    minutosInicio = dataInicio.getMinutes();
+
+    horasInicio = horasInicio > 9 ? horasInicio : "0" + horasInicio;
+    minutosInicio = minutosInicio > 9 ? minutosInicio : "0" + minutosInicio;
+
+    horasFim = dataFim.getHours();
+    minutosFim = dataFim.getMinutes();
+
+    horasFim = horasFim > 9 ? horasFim : "0" + horasFim;
+    minutosFim = minutosFim > 9 ? minutosFim : "0" + minutosFim;
+
+    return dia + " de " + mes + " " + horasInicio + ":" + minutosInicio + " - " + horasFim + ":" + minutosFim;
+}
+%>
+<div class="card-proximo" id="<%- agendamento.id_agend %>">
+    <div class="card">
+        <div class="proximo-conteudo">
+        <img src="images/samples/profile1.png" alt="Profile">
+        <span class="proximo-nome"><%- agendamento.nome_cliente + " " + agendamento.sobrenome_cliente %></span>
+        <hr>
+        <span class="proximo-data"><%- formatarData(agendamento.data_ini, agendamento.data_fim) %></span>
+        <span class="proximo-endereco"><%- agendamento.local_atend %></span>
+        <button onclick="finalizarAgendamento(<%- agendamento.id_agend %>);" class="btn btn-primary">Finalizar</button>
+        </div>
+    </div>
+</div>

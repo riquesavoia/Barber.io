@@ -1,0 +1,44 @@
+<%
+function formatarDia(data) {
+    let dia = new Date(data).getDate();
+    return dia;
+}
+
+function formatarMes(data) {
+    let meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
+    let mes = new Date(data).getMonth();
+    return meses[mes];
+}
+
+function formatarHorario(horario) {
+    let data = new Date(horario);
+
+    horas = data.getHours();
+    minutos = data.getMinutes();
+
+    horas = horas > 9 ? horas : "0" + horas;
+    minutos = minutos > 9 ? minutos : "0" + minutos;
+
+    return horas + ":" + minutos;
+}
+%>
+<div class="card-pendente" id="<%- agendamento.id_agend %>">
+    <div class="pendente-data">
+        <span><%- formatarMes(agendamento.data_ini) %></span>
+        <span><%- formatarDia(agendamento.data_ini) %></span>
+    </div>
+    <div class="card">
+        <div class="pendente-conteudo">
+            <img class="pendente-foto" src="images/samples/profile1.png" alt="">
+            <div class="pendente-info-container">
+                <span class="pendente-nome"><%- agendamento.nome_cliente + " " + agendamento.sobrenome_cliente %></span>
+                <span class="pendente-horario"><%- formatarHorario(agendamento.data_ini) + "-" + formatarHorario(agendamento.data_fim) %></span>
+            </div>
+            <span class="pendente-descricao">"<%- agendamento.descricao %>"</span>
+            <div class="pendente-botoes-container">
+                <img onclick="aceitarAgendamento(<%- agendamento.id_agend %>);" src="images/accept-icon.png" alt="Aceitar">
+                <img onclick="recusarAgendamento(<%- agendamento.id_agend %>);" src="images/refuse-icon.png" alt="Recusar">
+            </div>
+        </div>
+    </div>
+</div>

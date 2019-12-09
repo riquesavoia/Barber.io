@@ -11,7 +11,6 @@ router.get('/selectAll', (req, res, next) => {
 });
 
 router.post('/insert', (req, res, next) => {
-    console.log(req.body);
     new ProfissionalService(pool)
     .insert(req.body)
     .then(data => res.status(201).send({status: 'success'}))
