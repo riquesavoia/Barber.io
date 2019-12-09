@@ -13,6 +13,7 @@ function logarProfissional(data) {
         data: data,
         success:function(res){
             sessionStorage.setItem('usuario', JSON.stringify(res));
+            document.cookie = "id_profissional=" + res.id_profissional;
             window.location = "/agendamentos";
         },
         error:function(res){

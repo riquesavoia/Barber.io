@@ -15,37 +15,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
-
     <%- include partials/navigation.ejs %>
 
     <div class="conteudo-container">
       <div class="avaliacoes-container">
         <span class="conteudo-titulo">Avaliações</span>
         <div class="avaliacao-total">
-          <span>4,9</span>
-          <img src="images/avaliacoes-icon.png" alt="">
-          <img src="images/avaliacoes-icon.png" alt="">
-          <img src="images/avaliacoes-icon.png" alt="">
-          <img src="images/avaliacoes-icon.png" alt="">
-          <img src="images/avaliacoes-icon.png" alt="">
-        </div>
+          <% const media = calcularMediaAvaliacao(); %>
+          <span><%- media %></span>
+          <% for(var i=0;i<Math.floor(media);i++) {%>
+            <img src="images/avaliacoes-icon.png" alt="">
+          <% } %>
 
-        <div class="avaliacao-card">
-          <img class="avaliacao-foto" src="images/samples/profile1.png" alt="">
-          <div class="avaliacao-info-container">
-            <span class="avaliacao-nome">José Carlos</span>
-            <div class="avaliacao-nota">
-              <span>5,0</span>
-              <img src="images/avaliacoes-icon.png" alt="">
-              <img src="images/avaliacoes-icon.png" alt="">
-              <img src="images/avaliacoes-icon.png" alt="">
-              <img src="images/avaliacoes-icon.png" alt="">
-              <img src="images/avaliacoes-icon.png" alt="">
-            </div>
-          </div>
+          <% for(var i=0;i<(5-Math.floor(media));i++) { %>
+            <img src="images/avaliacoes-icon.png" class="no-star" alt="">
+          <% } %>
         </div>
+        <% avaliacoes.forEach(avaliacao => { %>
+          <%- include partials/avaliacao.ejs %>
+        <%}) %>
 
       </div>
     </div>
   </body>
 </html>
+<%
+  function calcularMediaAvaliacao() {
+    let nota = 0;
+    if (avaliacoes) {
+      avaliacoes.forEach(avaliacao => {
+        nota += avaliacao.nota;
+      })
+    }
+    nota = nota / (avaliacoes.length);
+    console.log(Math.floor(nota));
+    return nota.toFixed(1);
+  }
+%>

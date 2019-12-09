@@ -5,7 +5,7 @@ const AvaliacaoService = require('../services/avaliacao');
 
 router.get('/selectAllByProfissional/:id', (req, res, next) => {
     new AvaliacaoService(pool)
-    .selectAllByProfissional(req.params.id)
+    .selectAllByProfissional(id)
     .then(avaliacoes => res.json(avaliacoes))
     .catch(next)
 });

@@ -1,0 +1,17 @@
+<% nota = avaliacao.nota.toFixed(1) %>
+<div class="avaliacao-card">
+    <img class="avaliacao-foto" src="images/samples/profile1.png" alt="">
+    <div class="avaliacao-info-container">
+        <span class="avaliacao-nome"><%- avaliacao.nome_cliente + " " + avaliacao.sobrenome_cliente %></span>
+        <div class="avaliacao-nota">
+        <span><%- nota %></span>
+        <% for(var i=0;i<nota;i++) {%>
+            <img src="images/avaliacoes-icon.png" alt="">
+        <% } %>
+
+        <% for(var i=0;i<5-nota;i++) { %>
+            <img src="images/avaliacoes-icon.png" class="no-star" alt="">
+        <% } %>
+        </div>
+    </div>
+</div>

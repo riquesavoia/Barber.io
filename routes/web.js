@@ -3,10 +3,11 @@ const router = express.Router();
 const pool = require('../db');
 const ServicoService = require('../services/servico');
 const AgendamentoService = require('../services/agendamento');
+const AvaliacaoService = require('../services/avaliacao');
 const PagamentoService = require('../services/pagamento');
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index');
 });
 
 router.get('/cadastro', function(req, res, next) {
@@ -32,7 +33,13 @@ router.get('/agendamentos', function(req, res, next) {
 });
 
 router.get('/avaliacoes', function(req, res, next) {
-  res.render('avaliacoes', { title: 'Express' });
+  const idProfissional = req.cookies.id_profissional;
+  new AvaliacaoService(pool)
+  .selectAllByProfissional(idProfissional)
+  .then(listaAvaliacoes => {
+    res.render('avaliacoes', {avaliacoes: listaAvaliacoes})
+  })
+  .catch(next)
 });
 
 router.get('/perfil', function(req, res, next) {
