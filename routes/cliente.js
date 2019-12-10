@@ -10,4 +10,11 @@ router.get('/selectAll', (req, res, next) => {
     .catch(next)
 });
 
+router.post('/login', (req, res, next) => {
+    new ClienteService(pool)
+    .login(req.body)
+    .then(data => res.status(201).send(data))
+    .catch(next)
+});
+
 module.exports = router;

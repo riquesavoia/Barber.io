@@ -30,6 +30,15 @@ class ProfissionalService {
         });
     }
 
+    selectAllByCategoria(idCategoria) {
+        return new Promise((resolve, reject) => {
+            this._connection.query('SELECT * FROM profissional p INNER JOIN servico s ON p.id_servico = s.id_servico AND s.id_categoria = ?', idCategoria, (err, data) => {
+                if(err) return reject(err);
+                resolve(data[0]);
+            })
+        });
+    }
+
     insert(profissional) {
         return new Promise((resolve, reject) => {
             this._connection.query('SELECT * FROM profissional WHERE nome_usuario = ?', profissional['nome_usuario'], (err, data) => {

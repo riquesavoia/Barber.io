@@ -10,6 +10,22 @@ router.get('/selectAll', (req, res, next) => {
     .catch(next)
 });
 
+router.get('/selectById/:id', (req, res, next) => {
+    const idProfissional = req.params.id;
+    new ProfissionalService(pool)
+    .selectById(idProfissional)
+    .then(profissionais => res.json(profissionais))
+    .catch(next)
+});
+
+router.get('/selectAllByCategoria/:id', (req, res, next) => {
+    const idCategoria = req.params.id;
+    new ProfissionalService(pool)
+    .selectAllByCategoria(idCategoria)
+    .then(profissionais => res.json(profissionais))
+    .catch(next)
+});
+
 router.post('/insert', (req, res, next) => {
     new ProfissionalService(pool)
     .insert(req.body)
